@@ -39,7 +39,7 @@ class ClubUI extends StatefulWidget {
 }
 
 class _ClubPageState extends State<ClubUI> {
-  List<Comment> comments = [Comment(info: 'a', author: 'v', timestamp: 'r')];
+  List<Comment> comments = [];
   var formKey = GlobalKey<FormState>();
   TextEditingController commentController = TextEditingController();
   DateTime now = DateTime.now();
@@ -92,9 +92,12 @@ class _ClubPageState extends State<ClubUI> {
             top: 78,
             left: 40,
           ),
-
+/*
           Positioned(
-            child: SizedBox(
+            child: Column(
+              children: [Table(children: [TableRow(
+
+                children: [SizedBox(
               height: double.infinity,
               width: MediaQuery.of(context).size.width / 2 - 70,
               child: Container(
@@ -111,11 +114,14 @@ class _ClubPageState extends State<ClubUI> {
                     ]),
                 child: Text('Info'),
               ),
+            ),],
+              )],)],
             ),
             top: 260,
             left: 40,
             bottom: 40,
           ),
+          */
 
           Positioned(
             child: ListView.builder(
@@ -157,7 +163,7 @@ class _ClubPageState extends State<ClubUI> {
             top: 350,
             bottom: 40,
             right: 40,
-            left: 740,
+            left: 40,
           ),
 
           Positioned(
@@ -176,7 +182,8 @@ class _ClubPageState extends State<ClubUI> {
               },
             ),
             top: 260,
-            right: 215,
+            right: 100,
+            left: 100,
           ),
         ],
       ),
